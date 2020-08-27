@@ -1,7 +1,7 @@
 
 var db = require("../db/db.json");
 
-const apiRoutes = (app, fs) => {
+module.exports = (app, fs) => {
 
     app.get("/api/notes", (req, res) => {
         fs.readFile(db, "utf8", (err, data) => {
@@ -22,4 +22,5 @@ const apiRoutes = (app, fs) => {
 
 };
 
-module.exports = apiRoutes;
+
+// module.exports = apiRoutes;
