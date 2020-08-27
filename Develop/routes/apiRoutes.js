@@ -3,7 +3,7 @@ var db = require("../db/db.json");
 
 const apiRoutes = (app, fs) => {
 
-    app.get(db, (req, res) => {
+    app.get("/api/notes", (req, res) => {
         fs.readFile(db, "utf8", (err, data) => {
             if (err) {
                 throw err;
@@ -12,6 +12,13 @@ const apiRoutes = (app, fs) => {
             res.send(JSON.parse(data));
         })
     })
+
+    app.post("/api/notes", (req, res) => {
+      db.push(req.body);
+    //   res.json(db);
+      console.log(db);
+    })
+
 
 };
 
