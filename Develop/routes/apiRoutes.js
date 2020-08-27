@@ -1,5 +1,5 @@
 
-var db = require("../Develop/db/db.json");
+var db = require("../db/db.json");
 
 const apiRoutes = (app, fs) => {
 
