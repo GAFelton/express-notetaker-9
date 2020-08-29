@@ -1,12 +1,13 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Persistent notetaking and storage app using express node servers and a .json db file.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "GAFelton",
+  "repository": {"url": "https://github.com/GAFelton/express-notetaker-9"},
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
