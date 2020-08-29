@@ -15,7 +15,7 @@ module.exports = (app) => {
 
         const acceptedKeys = [{
             key: "title",
-            type: "string"
+            // type: "string"
         }, "text"]
 
         for (const {
@@ -37,14 +37,16 @@ module.exports = (app) => {
         } = notePayload
 
         const newNote = {
-            id: "ID", // USE 'uuid'
+            id: uuidv4(), // USE 'uuid'
             title,
             text
         }
 
-        db.push(newNote);
-
         // TODO - USE FS TO WRITE NEW DB ARRAY INTO 'db.json'
+        fs.appendFile(db.json, newNote, "utf8", (err, data) => {
+            if (err) throw err;
+            res.send(JSON.parse(data));
+        })
 
 
     })
