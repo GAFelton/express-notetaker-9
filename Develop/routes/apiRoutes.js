@@ -4,23 +4,58 @@ var db = require("../db/db.json");
 module.exports = (app, fs) => {
 
     app.get("/api/notes", (req, res) => {
-        fs.readFile(db, "utf8", (err, data) => {
-            if (err) {
-                throw err;
-            }
-
-            res.send(JSON.parse(data));
-        })
+      
+        res.json(db);
     })
 
     app.post("/api/notes", (req, res) => {
-      db.push(req.body);
-    //   res.json(db);
-      console.log(db);
+
+        const notePayload = req.body
+
+        const acceptedKeys = [{
+            key: "title",
+            type: "string"
+        }, "text"]
+
+        for (const {
+            key,
+            type
+        } of acceptedKeys) {
+            if (notePayload[key] === null || typeof notePayload[key] !== type) {
+                res.status(400).json({
+                    error: `Please provide a ${key} create a note.`
+                })
+
+                return;
+            }
+        }
+
+        const {
+            title,
+            text
+        } = notePayload
+
+        const newNote = {
+            id: "ID", // USE 'uuid'
+            title,
+            text
+        }
+
+        db.push(newNote);
+
+        // TODO - USE FS TO WRITE NEW DB ARRAY INTO 'db.json'
+
+
     })
 
 
 };
+
+
+
+
+//when doing put and delete, add a unique id.
+//npm package "uuid" generates unique ids.
 
 
 // module.exports = apiRoutes;
