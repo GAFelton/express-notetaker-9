@@ -4,6 +4,7 @@
   "description": "Persistent notetaking and storage app using express node servers and a .json db file.",
   "main": "server.js",
   "scripts": {
+    "start": "nodemon .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "GAFelton",
