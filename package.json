@@ -7,10 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "GAFelton",
-  "repository": {"url": "https://github.com/GAFelton/express-notetaker-9"},
+  "repository": {
+    "url": "https://github.com/GAFelton/express-notetaker-9"
+  },
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "uuid": "^8.3.0"
   }
 }

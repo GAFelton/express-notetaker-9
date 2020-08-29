@@ -1,10 +1,10 @@
-
-var db = require("../db/db.json");
+const { v4: uuidv4 } = require('uuid');
+const db = require("../db/db.json");
+// uuidv4();
 
 module.exports = (app, fs) => {
 
     app.get("/api/notes", (req, res) => {
-      
         res.json(db);
     })
 
