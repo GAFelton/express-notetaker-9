@@ -11,7 +11,7 @@ module.exports = (app) => {
 
     app.post("/api/notes", (req, res) => {
 
-        const notePayload = req.body
+        const notePayload = req.body;
 
         const acceptedKeys = [{
             key: "title",
@@ -22,7 +22,8 @@ module.exports = (app) => {
             key,
             type
         } of acceptedKeys) {
-            if (notePayload[key] === null || typeof notePayload[key] !== type) {
+            if (notePayload[key] === null) {
+                // || typeof notePayload[key] !== type
                 res.status(400).json({
                     error: `Please provide a ${key} create a note.`
                 })
@@ -43,7 +44,7 @@ module.exports = (app) => {
         }
 
         // TODO - USE FS TO WRITE NEW DB ARRAY INTO 'db.json'
-        fs.appendFile(db.json, newNote, "utf8", (err, data) => {
+        fs.appendFile("db.json", newNote, "utf8", (err, data) => {
             if (err) throw err;
             res.send(JSON.parse(data));
         })
