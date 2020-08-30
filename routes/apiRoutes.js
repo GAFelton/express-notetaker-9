@@ -38,15 +38,15 @@ module.exports = (app) => {
         } = notePayload
 
         const newNote = {
-            id: uuidv4(), // USE 'uuid'
-            title,
-            text
+            "id": uuidv4(), // USE 'uuid'
+            "title": title,
+            "text": text
         }
 
         // TODO - USE FS TO WRITE NEW DB ARRAY INTO 'db.json'
-        fs.appendFile("db.json", newNote, "utf8", (err, data) => {
+        fs.appendFile("./db/db.json", newNote, "utf8", (err, data) => {
             if (err) throw err;
-            res.send(JSON.parse(data));
+            res.json(data);
         })
 
 
