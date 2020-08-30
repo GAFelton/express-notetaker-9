@@ -8,7 +8,7 @@
 
 
 
-Link to Deployed Application
+[Link to Deployed Application](https://peaceful-reaches-00284.herokuapp.com/)
 
 [Link to GitHub Repo](https://github.com/GAFelton/express-notetaker-9)
 
@@ -37,7 +37,7 @@ Link to Deployed Application
 
   From the app, click through to notetaking, and either write new notes with the 'write' icon, save notes with 'save' (appears once you have text in both the 'Note Title', and 'Note Text' fields,) or delete an existing note with the 'delete' icon.
 
-![image-20200830143526296](.\readme_assets\Note-taker-screenshot.png)
+![Note-taker-screenshot](.\readme_assets\Note-taker-screenshot.png)
 
 
 
