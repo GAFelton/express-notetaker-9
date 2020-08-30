@@ -37,21 +37,36 @@ module.exports = (app) => {
             text
         } = notePayload
 
+
         const newNote = {
             "id": uuidv4(), // USE 'uuid'
             "title": title,
             "text": text
         }
+        db.push(newNote);
 
         // TODO - USE FS TO WRITE NEW DB ARRAY INTO 'db.json'
-        fs.appendFile("./db/db.json", newNote, "utf8", (err, data) => {
+        fs.writeFile("./db/db.json", JSON.stringify(db), "utf8", (err, data) => {
             if (err) throw err;
+            res.status(200).send("new note added");
             res.json(data);
         })
-
-
     })
 
+    app.delete(`/api/notes/:id`, (req, res) => {
+        const userId = req.params.id;
+        for (i=0; i<db.length; i++) {
+            if (db[i].id === userId) {
+                 db.splice(i, 1);
+                 break;
+            } 
+        }
+        fs.writeFile("./db/db.json", JSON.stringify(db), "utf8", (err, data) => {
+            if (err) throw err;
+            res.status(200).send("Note deleted.");
+            res.json(data);
+        })
+    })
 
 };
 
