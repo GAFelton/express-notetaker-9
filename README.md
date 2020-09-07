@@ -37,7 +37,7 @@
 
   From the app, click through to notetaking, and either write new notes with the 'write' icon, save notes with 'save' (appears once you have text in both the 'Note Title', and 'Note Text' fields,) or delete an existing note with the 'delete' icon.
 
-![Note-taker-screenshot](.\readme_assets\Note-taker-screenshot.png)
+![Note-taker-screenshot](./readme_assets/Note-taker-screenshot.png)
 
 
 
