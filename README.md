@@ -59,6 +59,6 @@
 
   [Link to Profile](https://github.com/GAFelton)
 
-  [E-mail](gafelton@gmail.com)
+  [E-mail](mailto:64555318+GAFelton@users.noreply.github.com)
 
   
